@@ -31,8 +31,8 @@ def get_user(username):
     cursor = conn.cursor()
     
     # ❌ SQL INJECTION
-    query = f"SELECT * FROM users WHERE username = '{username}'"
-    cursor.execute(query)
+    query = "SELECT * FROM users WHERE username = ?"
+    cursor.execute(query, (username,))
     user = cursor.fetchone()
     
     return f'Usuário: {user}'
