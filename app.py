@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template_string, make_response
 import sqlite3
 import subprocess
+import re
 import pickle
 import base64
 import os
@@ -53,6 +54,9 @@ def search():
 @app.route('/ping')
 def ping():
     host = request.args.get('host', '127.0.0.1')
+    
+    if not re.match(r'^[a-zA-Z0-9_\-./\\]+$', host):
+        return 'Invalid host parameter'
     
     # ❌ COMMAND INJECTION
     result = subprocess.run(f"ping -c 1 {host}", shell=True, capture_output=True, text=True)
