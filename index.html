@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Vulnerável - Página Inicial</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .vulnerable { background: #ffe6e6; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>🚨 Site Demonstrativo Vulnerável</h1>
+    <p>Este site contém vulnerabilidades intencionais para testes de segurança.</p>
+
+    <!-- Vulnerabilidade: XSS -->
+    <div class="vulnerable">
+        <h3>❌ Área Vulnerável a XSS</h3>
+        <form onsubmit="displayMessage()">
+            <input type="text" id="userInput" placeholder="Digite algo...">
+            <button type="submit">Exibir</button>
+        </form>
+        <div id="output"></div>
+    </div>
+
+    <!-- Vulnerabilidade: Autenticação Client-Side -->
+    <div class="vulnerable">
+        <h3>❌ Login Vulnerável</h3>
+        <form onsubmit="checkLogin()">
+            <input type="text" id="username" placeholder="Usuário">
+            <input type="password" id="password" placeholder="Senha">
+            <button type="submit">Entrar</button>
+        </form>
+        <p id="loginResult"></p>
+    </div>
+
+    <!-- Vulnerabilidade: Eval -->
+    <div class="vulnerable">
+        <h3>❌ Calculadora Perigosa</h3>
+        <button onclick="dangerousCalculator()">Usar Calculadora</button>
+    </div>
+
+    <nav>
+        <a href="sobre.html">Sobre</a>
+    </nav>
+
+    <script src="vulnerable-script.js"></script>
+</body>
+</html>
