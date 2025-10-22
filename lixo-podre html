@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Site Vulnerável</title>
+</head>
+<body>
+    <!-- Vulnerabilidade: XSS -->
+    <div id="content">
+        <script>
+            // ❌ XSS Vulnerability - using innerHTML with user input
+            const urlParams = new URLSearchParams(window.location.search);
+            const userMessage = urlParams.get('message');
+            document.getElementById('content').innerHTML = userMessage;
+        </script>
+    </div>
+
+    <!-- Vulnerabilidade: Senha em claro -->
+    <form onsubmit="login()">
+        <input type="text" id="username">
+        <input type="password" id="password">
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // ❌ Authentication bypass
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // ❌ Client-side authentication
+            if (username === "admin" && password === "admin123") {
+                alert("Login successful!");
+            }
+            
+            // ❌ Storing password in localStorage
+            localStorage.setItem('userpass', password);
+        }
+
+        // ❌ Using eval() with user input
+        function calculate() {
+            const userInput = prompt("Enter calculation:");
+            const result = eval(userInput);  // ❌ Dangerous eval
+            alert("Result: " + result);
+        }
+    </script>
+</body>
+</html>
