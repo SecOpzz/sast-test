@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ativar Cupom iFood R$50</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53, #f7f5f2);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 50px 40px;
+        }
+        
+        .gift-icon {
+            font-size: 4rem;
+            color: #FF6B6B;
+            text-align: center;
+            margin: 20px 0 30px 0;
+        }
+        
+        .message-box {
+            background-color: #FFF9E6;
+            border-left: 5px solid #FFD700;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 0 12px 12px 0;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+        
+        p {
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+            text-align: center;
+        }
+        
+        .cupom-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #FF6B6B;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        /* Estilos do formulário */
+        .form-container {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 40px 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .form-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .simple-form {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .form-input.error {
+            border: 2px solid #ff4444;
+            background-color: #fff5f5;
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+            background-color: rgba(255, 68, 68, 0.1);
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .activate-btn {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            width: 100%;
+            max-width: 250px;
+        }
+        
+        .activate-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .activate-btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .validity {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        .domain-info {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .footer-text p {
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .cupom-value {
+                font-size: 2rem;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎁 Ative Seu Cupom iFood!</h1>
+            <div class="subtitle">Seu presente de R$ 50,00 está esperando por você</div>
+        </div>
+        
+        <div class="content">
+            <div class="gift-icon">🎁</div>
+            
+            <div class="message-box">
+                <h2>Parabéns pelo seu reconhecimento!</h2>
+                <p>Como forma de agradecimento por todo seu empenho e dedicação em 2025, a Empresa X está oferece este cupom especial do iFood.</p>
+            </div>
+            
+            <div class="cupom-value">R$ 50,00</div>
+            
+            <div class="validity">
+                ⏰ Cupom é válido até o dia 30/12/2025
+            </div>
+            
+            <!-- Formulário para ativação do cupom -->
+            <div class="form-container">
+                <h3 class="form-title">📧 Ativar Cupom</h3>
+                <p style="color: white; margin-bottom: 20px;">Digite seu e-mail corporativo para ativar seu cupom de R$ 50,00</p>
+                
+                <div class="domain-info">
+                    🔒 Apenas e-mails do domínio <strong>@empresa.com.br</strong> são aceitos
+                </div>
+                
+                <form class="simple-form" action="" method="post" name="activationForm">
+                    <label class="form-label">E-mail Corporativo:</label>
+                    <input class="form-input" type="email" required="" placeholder="seu.email@empresa.com.br"/>
+                    <div class="error-message" id="errorMessage">
+                        ❌ Este cupom é válido apenas para e-mails do domínio @empresa.com.br
+                    </div>
+                    <button type="submit" class="activate-btn">
+                        ✅ Ativar Cupom
+                    </button>
+                </form>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="font-size: 1rem; color: #666;">
+                    💡 <strong>Dica:</strong> Após a ativação, você receberá o código do cupom por e-mail
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p style="margin: 0 0 10px 0;">Em caso de dúvidas, entre em contato com o departamento de RH</p>
+                    <p style="margin: 0;">© 2025 Empresa X. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Script para validação de domínio de e-mail
+        document.querySelector('.simple-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const emailInput = this.querySelector('input[name="email"]');
+            const errorMessage = document.getElementById('errorMessage');
+            const submitBtn = this.querySelector('.activate-btn');
+            const email = emailInput.value.trim();
+            
+            // Reset estados anteriores
+            emailInput.classList.remove('error');
+            errorMessage.style.display = 'none';
+            submitBtn.disabled = false;
+            
+            // Validar domínio do e-mail
+            const allowedDomain = '@empresa.com.br';
+            if (!email.endsWith(allowedDomain)) {
+                // Mostrar erro
+                emailInput.classList.add('error');
+                errorMessage.style.display = 'block';
+                
+                // Efeito visual de erro
+                emailInput.focus();
+                return;
+            }
+            
+            // Simulação de processamento (domínio correto)
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '⏳ Ativando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                // Simulação de sucesso
+                alert(`🎉 Cupom ativado com sucesso!\n\nUm e-mail com o código do cupom foi enviado para:\n${email}\n\nAproveite seu presente de R$ 50,00 no iFood!`);
+                
+                // Reset do formulário
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+                errorMessage.style.display = 'none';
+                emailInput.classList.remove('error');
+            }, 2000);
+        });
+
+        // Validação em tempo real enquanto o usuário digita
+        document.querySelector('input[name="email"]').addEventListener('input', function() {
+            const errorMessage = document.getElementById('errorMessage');
+            const email = this.value.trim();
+            
+            if (email && !email.endsWith('@empresa.com.br')) {
+                this.classList.add('error');
+                errorMessage.style.display = 'block';
+            } else {
+                this.classList.remove('error');
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+
+</body></html>
