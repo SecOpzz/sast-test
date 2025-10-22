@@ -1,0 +1,16 @@
+{
+  "name": "site-vulneravel-demo",
+  "version": "1.0.0",
+  "description": "Site com vulnerabilidades para demonstração",
+  "main": "vulnerable-script.js",
+  "scripts": {
+    "start": "python app.py"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "sqlite3": "^5.1.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
