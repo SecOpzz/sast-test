@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre - Site Vulnerável</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .vulnerable { background: #ffe6e6; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <h1>📄 Sobre este Projeto</h1>
+    
+    <div class="vulnerable">
+        <h3>❌ Busca Vulnerável</h3>
+        <form onsubmit="searchContent()">
+            <input type="text" id="searchQuery" placeholder="Buscar...">
+            <button type="submit">Buscar</button>
+        </form>
+        <div id="searchResults"></div>
+    </div>
+
+    <div class="vulnerable">
+        <h3>❌ Carregamento de URL</h3>
+        <form onsubmit="loadExternal()">
+            <input type="text" id="externalUrl" placeholder="URL para carregar" value="https://">
+            <button type="submit">Carregar</button>
+        </form>
+        <div id="externalContent"></div>
+    </div>
+
+    <nav>
+        <a href="index.html">Voltar</a>
+    </nav>
+
+    <script src="vulnerable-script.js"></script>
+</body>
+</html>
